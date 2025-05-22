@@ -1,8 +1,8 @@
-# 📚 Sebo Virtual - Projeto Integrador 2025
+#  Sebo Virtual - Projeto Integrador 2025
 
 Sistema de gerenciamento para um **sebo online**, desenvolvido como parte do Projeto Integrador. Permite o cadastro, edição e visualização de clientes, além da simulação de vendas e consulta de livros.
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 ### Backend (Java Spring Boot)
 - Spring Web
@@ -18,7 +18,7 @@ Sistema de gerenciamento para um **sebo online**, desenvolvido como parte do Pro
 
 ---
 
-## 📦 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 ### Cliente
 - Cadastro de cliente com validação de CPF
@@ -39,7 +39,7 @@ Sistema de gerenciamento para um **sebo online**, desenvolvido como parte do Pro
 ---
 
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Backend
 ```bash
@@ -49,6 +49,7 @@ cd back_sebo_pi
 Acesse o banco H2 em:
 http://localhost:5054/h2-console
 
+---
 ### Frontend
 cd front_sebo_pi
 npm install
@@ -57,7 +58,7 @@ ng serve
 Acesse em:
 http://localhost:4200
 
-👤 Usuário de Teste
+Usuário de Teste
 Email: email@qualquer.com
 
 Senha: Teste@123
