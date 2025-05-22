@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Catálogo de Livros</h2>
+  <button routerLink="/home/cliente" class="voltar-button">Voltar</button>
+
+  <div class="conteudo" *ngFor="let livro of livros">
+    <mat-card class="card mat-elevation-z3">
+      <mat-card-header>
+        <mat-card-title>{{ livro.titulo }}</mat-card-title>
+        <mat-card-subtitle>Autor: {{ livro.autor }}</mat-card-subtitle>
+        <mat-card-subtitle>Editora: {{ livro.editora }}</mat-card-subtitle>
+        <mat-card-subtitle>Ano de Publicação: {{ livro.anoPublicacao }}</mat-card-subtitle>
+        <mat-card-subtitle>Preço: {{ livro.preco | currency:'BRL' }}</mat-card-subtitle>
+        <mat-card-subtitle>Estado de Conservação: {{ livro.estadoConservacao }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <div class="acoes">
+        <button mat-mini-fab color="primary" class="acao"
+                (click)="inscrever(livro)"
+                [disabled]="estaInscrito(livro.id)">
+          <mat-icon>{{ estaInscrito(livro.id) ? 'check' : 'shopping_cart' }}</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

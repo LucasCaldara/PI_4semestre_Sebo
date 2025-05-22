@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="badge">
+        <button mat-raised-button color="warn" matBadge="{{ativo}}">
+            Livro Ativo
+        </button>
+    </div>
+    <h2>Lista de Livros</h2>
+
+    <!-- Itera sobre a lista de livros -->
+    <div class="conteudo" *ngFor="let item of list">
+        <mat-card class="card mat-elevation-z3">
+            <mat-card-header>
+                <mat-card-title>{{ item.titulo }}</mat-card-title>
+                <mat-card-subtitle>Autor: {{ item.autor }}</mat-card-subtitle>
+                <mat-card-subtitle>Editora: {{ item.editora }}</mat-card-subtitle>
+                <mat-card-subtitle>Ano de Publicação: {{ item.anoPublicacao }}</mat-card-subtitle>
+                <mat-card-subtitle>Preço: {{ item.preco | currency:'BRL':'symbol' }}</mat-card-subtitle>
+                <mat-card-subtitle>Estado de Conservação: {{ item.estadoConservacao }}</mat-card-subtitle>
+                <mat-card-subtitle>Ativo: {{ item.ativo ? 'Sim' : 'Não' }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <div class="acoes">
+                <button mat-mini-fab color="primary" id="gravar" class="acao">
+                  <mat-icon>done</mat-icon>
+                </button>
+                <button mat-mini-fab color="accent" id="editar" class="acao">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-mini-fab color="warn" id="apagar" class="acao">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+        </mat-card>
+    </div>
+</div>
+
+<!--*ngfor = percorre a lista definida por read-all.component.ts  -->

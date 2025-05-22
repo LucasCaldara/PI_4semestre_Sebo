@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h2>Lista de Livros</h2>
+  <button routerLink="/home" class="voltar-button">Voltar</button>
+
+  <div class="conteudo" *ngFor="let livro of livros">
+    <mat-card class="card mat-elevation-z3">
+      <mat-card-header>
+        <mat-card-title>{{ livro.titulo }}</mat-card-title>
+        <mat-card-subtitle>Autor: {{ livro.autor }}</mat-card-subtitle>
+        <mat-card-subtitle>Editora: {{ livro.editora }}</mat-card-subtitle>
+        <mat-card-subtitle>Ano de Publicação: {{ livro.anoPublicacao }}</mat-card-subtitle>
+        <mat-card-subtitle>Preço: {{ livro.preco | currency:'BRL' }}</mat-card-subtitle>
+        <mat-card-subtitle>Estado de Conservação: {{ livro.estadoConservacao }}</mat-card-subtitle>
+        <mat-card-subtitle>Novo ?: {{ livro.ativo ? 'Sim' : 'Não' }}</mat-card-subtitle>
+      </mat-card-header>
+      <div class="acoes">
+
+        <!-- Marcar como ativo 
+        <button mat-mini-fab color="primary" class="acao" (click)="marcarComoAtivo(livro)">
+          <mat-icon>done</mat-icon>
+        </button>-->
+
+        <!-- Editar livro -->
+        <button mat-mini-fab color="accent" class="acao" (click)="editarLivro(livro)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <!-- Excluir livro -->
+        <button mat-mini-fab color="warn" class="acao" (click)="excluirLivro(livro.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

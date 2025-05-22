@@ -1,0 +1,91 @@
+<div class="form-page">
+  <div class="form-card">
+    <form (ngSubmit)="salvar()" class="form-container">
+      <h2 class="form-title">{{ isEditMode ? 'Editar Livro' : 'Cadastrar Livro' }}</h2>
+
+      <button routerLink="/home" class="back-button">Voltar</button>
+
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input
+          [(ngModel)]="livro.titulo"
+          name="titulo"
+          id="titulo"
+          required
+          type="text"
+          placeholder="Digite o título do livro"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="autor">Autor:</label>
+        <input
+          [(ngModel)]="livro.autor"
+          name="autor"
+          id="autor"
+          required
+          type="text"
+          placeholder="Digite o autor do livro"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="editora">Editora:</label>
+        <input
+          [(ngModel)]="livro.editora"
+          name="editora"
+          id="editora"
+          required
+          type="text"
+          placeholder="Digite a editora do livro"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="anoPublicacao">Ano de Publicação:</label>
+        <input
+          [(ngModel)]="livro.anoPublicacao"
+          name="anoPublicacao"
+          id="anoPublicacao"
+          required
+          type="number"
+          placeholder="Digite o ano de publicação"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input
+          [(ngModel)]="livro.preco"
+          name="preco"
+          id="preco"
+          required
+          type="number"
+          placeholder="Digite o preço do livro"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="estadoConservacao">Estado de Conservação:</label>
+        <input
+          [(ngModel)]="livro.estadoConservacao"
+          name="estadoConservacao"
+          id="estadoConservacao"
+          required
+          type="text"
+          placeholder="Digite o estado de conservação"
+          class="form-control"
+        />
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" class="submit-button">
+        {{ isEditMode ? 'Atualizar Livro' : 'Salvar Livro' }}
+      </button>
+    </form>
+  </div>
+</div>

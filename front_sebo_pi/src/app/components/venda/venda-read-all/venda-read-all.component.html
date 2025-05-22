@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Lista de Vendas</h2>
+  <button routerLink="/home" class="voltar-button">Voltar</button>
+
+  <div class="conteudo" *ngFor="let venda of list">
+    <mat-card class="card mat-elevation-z3">
+      <mat-card-header>
+        <mat-card-title>Venda #{{ venda.id }}</mat-card-title>
+        <mat-card-subtitle>Cliente: {{ venda.cliente.nome }}</mat-card-subtitle>
+        <mat-card-subtitle>Data: {{ venda.dataVenda | date }}</mat-card-subtitle>
+        <mat-card-subtitle>Valor Total: {{ venda.valorTotal | currency:'BRL':'symbol' }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <div class="acoes">
+       
+        <!-- Botão Excluir -->
+        <button mat-mini-fab color="warn" class="acao" (click)="excluirVenda(venda.id!)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+*{
+  box-sizing:border-box;
+}
+
+/* Envolve página */
+:host{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+/* Centraliza card */
+.login-wrapper{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:2rem;
+}
+
+/* Card */
+.login-container{
+  width:100%;
+  max-width:420px;          /* menor para não “esticar” */
+  background:#fff;
+  border-radius:12px;
+  padding:2.5rem 2rem;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+/* Título */
+.login-container h2{
+  text-align:center;
+  margin-bottom:1.75rem;
+  font-size:1.6rem;
+  color:#2c3e50;
+}
+
+/* Grupo */
+.form-group{
+  margin-bottom:1.25rem;
+}
+
+/* Label */
+.form-group label{
+  display:block;
+  font-weight:600;
+  margin-bottom:.4rem;
+  color:#34495e;
+}
+
+/* Input / select */
+.form-control{
+  width:100%;
+  padding:.75rem 1rem;
+  font-size:1rem;
+  border:1px solid #cdd1d6;
+  border-radius:6px;
+  transition:border .25s;
+}
+
+.form-control:focus{
+  outline:none;
+  border-color:#007bff;
+  box-shadow:0 0 0 2px rgba(0,123,255,.15);
+}
+
+/* Botão principal */
+.form-button{
+  width:100%;
+  padding:.8rem;
+  font-size:1.05rem;
+  font-weight:600;
+  background:#007bff;
+  color:#fff;
+  border:0;
+  border-radius:6px;
+  cursor:pointer;
+  transition:background .3s;
+}
+
+.form-button:hover{
+  background:#0062d1;
+}
+
+/* Botão secundário (caso use) */
+.alt-button{
+  width:100%;
+  margin-top:.75rem;
+  padding:.8rem;
+  font-size:1.05rem;
+  font-weight:600;
+  background:#6c757d;
+  color:#fff;
+  border:0;
+  border-radius:6px;
+  cursor:pointer;
+  transition:background .3s;
+}
+
+.alt-button:hover{
+  background:#5a6268;
+}
+
+/* Mensagem de erro */
+.error{
+  color:#e74c3c;
+  text-align:center;
+  margin-top:1rem;
+}

@@ -1,0 +1,47 @@
+<form (ngSubmit)="salvar()" class="form-container">
+  <h2 class="form-title">{{ isEditMode ? 'Editar Venda' : 'Cadastrar Venda' }}</h2>
+
+  <!-- Botão Voltar -->
+  <button routerLink="/home" class="voltar-button">Voltar</button>
+
+  <!-- Seleção de Cliente -->
+  <div class="form-group">
+    <label for="cliente">Cliente:</label>
+    <select [(ngModel)]="venda.cliente" name="cliente" id="cliente" required class="form-control">
+      <option *ngFor="let cliente of clientes" [ngValue]="cliente">
+        {{ cliente.nome }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Seleção de Livros -->
+  <div class="form-group">
+    <label for="livros">Livros:</label>
+    <div *ngFor="let livro of livros" class="livro-checkbox">
+      <input type="checkbox" [checked]="isLivroSelecionado(livro)" (change)="onLivroSelecionado($event, livro)"
+        id="livro-{{ livro.id }}" />
+      <label for="livro-{{ livro.id }}">
+        {{ livro.titulo }} - {{ livro.preco | currency:'BRL':'symbol' }}
+      </label>
+    </div>
+  </div>
+
+  <!-- Data da Venda -->
+  <div class="form-group">
+    <label for="dataVenda">Data:</label>
+    <input [(ngModel)]="venda.dataVenda" [value]="venda.dataVenda | date:'yyyy-MM-dd'" name="dataVenda"
+      id="dataVenda" type="date" required class="form-control" />
+  </div>
+
+  <!-- Valor Total -->
+  <div class="form-group">
+    <label for="valorTotal">Valor Total:</label>
+    <input [value]="venda.valorTotal | number:'1.2-2'" name="valorTotal" id="valorTotal" type="text" readonly
+      class="form-control" />
+  </div>
+
+  <!-- Botão Salvar -->
+  <button mat-raised-button color="primary" type="submit" class="form-button">
+    {{ isEditMode ? 'Atualizar Venda' : 'Salvar Venda' }}
+  </button>
+</form>

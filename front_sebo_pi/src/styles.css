@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {height: 100%;
+    margin: 0;
+ }
+body
+{ margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: #adb5bd !important;
+    display: flex;
+    flex-direction: column;
+}
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* altura mínima da tela */
+  }
+  .content {
+    flex: 1; /* ocupa o espaço entre header e footer */
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }

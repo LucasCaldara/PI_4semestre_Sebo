@@ -1,0 +1,68 @@
+<div class="login-wrapper">
+    <div class="login-container">
+      <h2>Cadastro</h2>
+  
+      <!-- Formulário -->
+      <form (ngSubmit)="salvar()">
+        <!-- Nome -->
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input
+            id="nome"
+            name="nome"
+            [(ngModel)]="cliente.nome"
+            class="form-control"
+            required />
+        </div>
+  
+        <!-- CPF -->
+        <div class="form-group">
+          <label for="cpf">CPF:</label>
+          <input
+            id="cpf"
+            name="cpf"
+            [(ngModel)]="cliente.cpf"
+            class="form-control"
+            required />
+        </div>
+  
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            [(ngModel)]="cliente.email"
+            class="form-control"
+            required />
+        </div>
+  
+        <!-- Senha -->
+        <div class="form-group">
+          <label for="senha">Senha:</label>
+          <input
+            id="senha"
+            name="senha"
+            type="password"
+            [(ngModel)]="cliente.senha"
+            class="form-control"
+            required />
+        </div>
+  
+        <!-- Botões -->
+        <button mat-raised-button color="primary" type="submit" class="form-button">
+          Cadastrar
+        </button>
+  
+        <button type="button" (click)="irParaLogin()" class="alt-button">
+          Já tenho uma conta
+        </button>
+      </form>
+  
+      <!-- Mensagem de erro -->
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    </div>
+  </div>
+  
+  
