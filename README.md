@@ -59,9 +59,15 @@ Acesse em:
 http://localhost:4200
 
 Usuário de Teste
+Cliente:
 Email: email@qualquer.com
 
 Senha: Teste@123
+
+ADM:
+Email: admin@email.com
+
+Senha: 123456
 
 📌Autores
 Lucas Passarelli Caldara
